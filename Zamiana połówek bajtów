@@ -1,0 +1,21 @@
+#include <iostream>
+
+using namespace std;
+
+int swap_halves(int a)
+{
+    unsigned int m=0xF0F0F0F0;
+    int b=a&m;
+    m=m>>4;
+    a=a&m;
+    b=b>>4;
+    a=a<<4;
+    return a|b;
+}
+
+int main ()
+{
+    int a=0;
+    cin>>a;
+    cout<<swap_halves(a);
+}
