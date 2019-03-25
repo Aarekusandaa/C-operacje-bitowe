@@ -1,0 +1,26 @@
+#include <iostream>
+
+using namespace std;
+
+void binary_display(int a)
+{
+unsigned int m=0x80000000, i=1;
+    while(m)
+    {
+        if((a&m)!=0) 
+            cout<<"1";
+        else 
+            cout<<"0";
+        if((i++)%4==0) 
+            cout<<" ";
+        m=m>>1;
+    }
+}
+
+int main ()
+{
+    int a;
+    cin>>a;
+    binary_display(a);
+    return 0;
+}
