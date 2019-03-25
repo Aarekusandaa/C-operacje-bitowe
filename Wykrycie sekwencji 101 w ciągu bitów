@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+
+int seqs(int a)
+{
+    int c=0, a1=0;
+    unsigned int m1=0xE0000000;
+    unsigned int m2=0xA0000000;
+    while(m1>=7)
+    {
+        a1=a&m1;
+        a1=a1^m2;
+        if(a1==0)
+            {
+            c++;
+            }
+        m1=m1>>1;
+        m2=m2>>1;
+    }
+    return c;
+}
+
+int main ()
+{
+    int a=0;
+    cin>>a;
+    cout<<seqs(a);
+}
