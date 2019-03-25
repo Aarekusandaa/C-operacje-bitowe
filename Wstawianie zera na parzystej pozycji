@@ -1,0 +1,16 @@
+#include <iostream>
+
+using namespace std;
+int zero_even(int a)
+    {
+    unsigned int m=0x55555555;
+    a=a&m;
+    return a;
+    }
+
+int main ()
+{
+    int a=0;
+    cin>>a;
+    cout<<zero_even(a);
+}
